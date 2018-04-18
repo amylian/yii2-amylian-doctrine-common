@@ -4,6 +4,7 @@
     "require": {
         "doctrine/common": "*",
         "amylian/yii2-amylian-base": "*"
+        "amylian/yii2-amylian-doctrine-common": "*"
     },
   "autoload": {
     "psr-4": {
