@@ -9,4 +9,5 @@
     "psr-4": {
       "abexto\\amylian\\yii\\doctrine\\common\\": "src/"
     }  
+  }
 }
