@@ -11,7 +11,7 @@ namespace abexto\amylian\yii\doctrine\common;
  *
  * @author Andreas Prucha, Abexto - Helicon Software Development
  */
-class EventManager extends \abexto\amylian\yii2\doctrine\base\AbstractDoctrineInstWrapperComponent
+class EventManager extends \abexto\amylian\yii\doctrine\base\AbstractDoctrineInstWrapperComponent
 {
     public $instClass = \Doctrine\Common\EventManager::class;
 }
