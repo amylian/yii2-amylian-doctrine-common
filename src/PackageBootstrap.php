@@ -41,9 +41,14 @@ namespace abexto\amylian\yii\doctrine\common;
  */
 class PackageBootstrap implements \yii\base\BootstrapInterface
 {
-    public function bootstrap(\yii\base\Application $app)
+    /**
+     * @param \yii\base\Application $app
+     */
+    public function bootstrap($app)
     {
+        /*
         \Yii::$container->setSingleton(EventManager::class, ['class' => EventManager::class]);
+         */
     }
 
 }
