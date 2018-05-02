@@ -31,7 +31,7 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "abexto\\amylian\\yii\\doctrine\\common\\tests": "tests/"
+      "abexto\\amylian\\yii\\doctrine\\common\\tests\\": "tests/"
     }  
   },
   "extra": {
