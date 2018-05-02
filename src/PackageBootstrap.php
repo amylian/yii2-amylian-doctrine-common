@@ -46,9 +46,7 @@ class PackageBootstrap implements \yii\base\BootstrapInterface
      */
     public function bootstrap($app)
     {
-        /*
         \Yii::$container->setSingleton(EventManager::class, ['class' => EventManager::class]);
-         */
     }
 
 }
