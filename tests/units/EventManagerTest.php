@@ -34,6 +34,10 @@
 
 namespace abexto\amylian\yii\doctrine\common\tests\units;
 
+require_once __DIR__ . '/../classes/TestEventArgs.php';
+require_once __DIR__ . '/../classes/TestEventSubscriberAsComponent.php';
+require_once __DIR__ . '/../classes/TestEventSubscriberAsStdClass.php';
+
 /**
  * Description of EventManagerTest
  *
@@ -41,8 +45,92 @@ namespace abexto\amylian\yii\doctrine\common\tests\units;
  */
 class EventManagerTest extends \abexto\amylian\yii\phpunit\AbstractYiiTestCase
 {
+
     public function testClassEventManagerExists()
     {
         $this->assertTrue(class_exists(\abexto\amylian\yii\doctrine\common\EventManager::class));
     }
+
+    public function testEventSubscriberAsComponent()
+    {
+        static::mockYiiConsoleApplication(['components' => [
+                'dcEventManager' => [
+                    'class'            => \abexto\amylian\yii\doctrine\common\EventManager::class,
+                    'eventSubscribers' => [
+                        [
+                            'class' => \abexto\amylian\yii\doctrine\common\tests\classes\TestEventSubscriberAsComponent::class]
+                    ]
+                ]
+        ]]);
+        $eventArgs                = new \abexto\amylian\yii\doctrine\common\tests\classes\TestEventArgs();
+        $eventArgs->testPerformed = false;
+        \Yii::$app->dcEventManager->inst->dispatchEvent('doTest', $eventArgs);
+        $this->assertTrue($eventArgs->testPerformed);
+    }
+
+    public function testEventSubscriberAsStdClass1()
+    {
+        static::mockYiiConsoleApplication(['components' => [
+                'dcEventManager' => [
+                    'class'            => \abexto\amylian\yii\doctrine\common\EventManager::class,
+                    'eventSubscribers' => [
+                        [
+                            'class' => \abexto\amylian\yii\doctrine\common\tests\classes\TestEventSubscriberAsStdClass::class]
+                    ]
+                ]
+        ]]);
+        $eventArgs                = new \abexto\amylian\yii\doctrine\common\tests\classes\TestEventArgs();
+        $eventArgs->testPerformed = false;
+        \Yii::$app->dcEventManager->inst->dispatchEvent('doTest', $eventArgs);
+        $this->assertTrue($eventArgs->testPerformed);
+    }
+
+    public function testEventSubscriberAsStdClass2()
+    {
+        $ventSubscriber           = new \abexto\amylian\yii\doctrine\common\tests\classes\TestEventSubscriberAsStdClass();
+        static::mockYiiConsoleApplication(['components' => [
+                'dcEventManager' => [
+                    'class'            => \abexto\amylian\yii\doctrine\common\EventManager::class,
+                    'eventSubscribers' => [$ventSubscriber]
+                ]
+        ]]);
+        $eventArgs                = new \abexto\amylian\yii\doctrine\common\tests\classes\TestEventArgs();
+        $eventArgs->testPerformed = false;
+        \Yii::$app->dcEventManager->inst->dispatchEvent('doTest', $eventArgs);
+        $this->assertTrue($eventArgs->testPerformed);
+    }
+
+    public function testAddEventSubscriber()
+    {
+        $ventSubscriber           = new \abexto\amylian\yii\doctrine\common\tests\classes\TestEventSubscriberAsStdClass();
+        static::mockYiiConsoleApplication(['components' => [
+                'dcEventManager' => [
+                    'class'            => \abexto\amylian\yii\doctrine\common\EventManager::class,
+                    'eventSubscribers' => [$ventSubscriber]
+                ]
+        ]]);
+        $eventArgs                = new \abexto\amylian\yii\doctrine\common\tests\classes\TestEventArgs();
+        $eventArgs->testPerformed = false;
+        \Yii::$app->dcEventManager->addEventSubscriber($ventSubscriber, 'foo');
+        \Yii::$app->dcEventManager->inst->dispatchEvent('doTest', $eventArgs);
+        $this->assertTrue($eventArgs->testPerformed);
+    }
+
+    public function testRemoveEventSubscriber()
+    {
+        $ventSubscriber           = new \abexto\amylian\yii\doctrine\common\tests\classes\TestEventSubscriberAsStdClass();
+        static::mockYiiConsoleApplication(['components' => [
+                'dcEventManager' => [
+                    'class'            => \abexto\amylian\yii\doctrine\common\EventManager::class,
+                    'eventSubscribers' => [$ventSubscriber]
+                ]
+        ]]);
+        $eventArgs                = new \abexto\amylian\yii\doctrine\common\tests\classes\TestEventArgs();
+        $eventArgs->testPerformed = false;
+        \Yii::$app->dcEventManager->addEventSubscriber($ventSubscriber, 'foo');
+        \Yii::$app->dcEventManager->removeEventSubscriber('foo');
+        \Yii::$app->dcEventManager->inst->dispatchEvent('doTest', $eventArgs);
+        $this->assertFalse($eventArgs->testPerformed);
+    }
+
 }
