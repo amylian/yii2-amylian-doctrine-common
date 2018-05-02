@@ -28,5 +28,8 @@
     "psr-4": {
       "abexto\\amylian\\yii\\doctrine\\common\\": "src/"
     }  
+  },
+  "extra": {
+    "bootstrap": "abexto\\amylian\\yii\\doctrine\\common\\PackageBoostrap"
   }
 }
