@@ -35,21 +35,9 @@
 namespace abexto\amylian\yii\doctrine\common;
 
 /**
- * Description of PackageBootstrap
  *
  * @author Andreas Prucha, Abexto - Helicon Software Development
  */
-class PackageBootstrap implements \yii\base\BootstrapInterface
+interface EventManagerInterface
 {
-
-    /**
-     * @param \yii\base\Application $app
-     */
-    public function bootstrap($app)
-    {
-        if (!\Yii::$container->has(EventManagerInterface::class)) {
-            \Yii::$container->setSingleton(EventManagerInterface::class, ['class' => EventManager::class]);
-        }
-    }
-
 }

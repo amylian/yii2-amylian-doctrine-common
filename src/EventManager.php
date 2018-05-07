@@ -14,6 +14,7 @@ namespace abexto\amylian\yii\doctrine\common;
  * @property \Doctrine\Common\EventManager $inst Wrapped EventManager Instance
  */
 class EventManager extends \abexto\amylian\yii\doctrine\base\AbstractDoctrineInstWrapperComponent
+implements EventManagerInterface
 {
 
     public $instClass = \Doctrine\Common\EventManager::class;
