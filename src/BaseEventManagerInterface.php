@@ -35,8 +35,9 @@
 namespace abexto\amylian\yii\doctrine\common;
 
 /**
+ *
  * @author Andreas Prucha, Abexto - Helicon Software Development
  */
-interface ConfigurationInterface
+interface BaseEventManagerInterface extends \abexto\amylian\yii\doctrine\base\common\BaseDoctrineComponentInterface
 {
 }

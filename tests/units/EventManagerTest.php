@@ -48,14 +48,14 @@ class EventManagerTest extends \abexto\amylian\yii\phpunit\AbstractYiiTestCase
 
     public function testClassEventManagerExists()
     {
-        $this->assertTrue(class_exists(\abexto\amylian\yii\doctrine\common\EventManager::class));
+        $this->assertTrue(class_exists(\abexto\amylian\yii\doctrine\common\BaseEventManager::class));
     }
 
     public function testEventSubscriberAsComponent()
     {
         static::mockYiiConsoleApplication(['components' => [
                 'dcEventManager' => [
-                    'class'            => \abexto\amylian\yii\doctrine\common\EventManager::class,
+                    'class'            => \abexto\amylian\yii\doctrine\common\BaseEventManager::class,
                     'eventSubscribers' => [
                         [
                             'class' => \abexto\amylian\yii\doctrine\common\tests\classes\TestEventSubscriberAsComponent::class]
@@ -72,7 +72,7 @@ class EventManagerTest extends \abexto\amylian\yii\phpunit\AbstractYiiTestCase
     {
         static::mockYiiConsoleApplication(['components' => [
                 'dcEventManager' => [
-                    'class'            => \abexto\amylian\yii\doctrine\common\EventManager::class,
+                    'class'            => \abexto\amylian\yii\doctrine\common\BaseEventManager::class,
                     'eventSubscribers' => [
                         [
                             'class' => \abexto\amylian\yii\doctrine\common\tests\classes\TestEventSubscriberAsStdClass::class]
@@ -90,7 +90,7 @@ class EventManagerTest extends \abexto\amylian\yii\phpunit\AbstractYiiTestCase
         $ventSubscriber           = new \abexto\amylian\yii\doctrine\common\tests\classes\TestEventSubscriberAsStdClass();
         static::mockYiiConsoleApplication(['components' => [
                 'dcEventManager' => [
-                    'class'            => \abexto\amylian\yii\doctrine\common\EventManager::class,
+                    'class'            => \abexto\amylian\yii\doctrine\common\BaseEventManager::class,
                     'eventSubscribers' => [$ventSubscriber]
                 ]
         ]]);
@@ -105,7 +105,7 @@ class EventManagerTest extends \abexto\amylian\yii\phpunit\AbstractYiiTestCase
         $ventSubscriber           = new \abexto\amylian\yii\doctrine\common\tests\classes\TestEventSubscriberAsStdClass();
         static::mockYiiConsoleApplication(['components' => [
                 'dcEventManager' => [
-                    'class'            => \abexto\amylian\yii\doctrine\common\EventManager::class,
+                    'class'            => \abexto\amylian\yii\doctrine\common\BaseEventManager::class,
                     'eventSubscribers' => [$ventSubscriber]
                 ]
         ]]);
@@ -121,7 +121,7 @@ class EventManagerTest extends \abexto\amylian\yii\phpunit\AbstractYiiTestCase
         $ventSubscriber           = new \abexto\amylian\yii\doctrine\common\tests\classes\TestEventSubscriberAsStdClass();
         static::mockYiiConsoleApplication(['components' => [
                 'dcEventManager' => [
-                    'class'            => \abexto\amylian\yii\doctrine\common\EventManager::class,
+                    'class'            => \abexto\amylian\yii\doctrine\common\BaseEventManager::class,
                     'eventSubscribers' => [$ventSubscriber]
                 ]
         ]]);

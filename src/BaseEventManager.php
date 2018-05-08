@@ -11,13 +11,16 @@ namespace abexto\amylian\yii\doctrine\common;
  *
  * @author Andreas Prucha, Abexto - Helicon Software Development
  * 
- * @property \Doctrine\Common\EventManager $inst Wrapped EventManager Instance
+ * @property \Doctrine\Common\BaseEventManager $inst Wrapped EventManager Instance
  */
-class EventManager extends \abexto\amylian\yii\doctrine\base\AbstractDoctrineInstWrapperComponent
-implements EventManagerInterface
+class BaseEventManager extends \abexto\amylian\yii\doctrine\base\BaseDoctrineComponent
+implements BaseEventManagerInterface
 {
 
-    public $instClass = \Doctrine\Common\EventManager::class;
+    const DEFAULT_REF = Consts::DEFAULT_EVENT_MANAGER_REF;
+    const DEFAULT_CLASS = Consts::DEFAULT_EVENT_MANAGER_CLASS;
+
+    public $instClass = \Doctrine\Common\BaseEventManager::class;
 
     /**
      * Definition of EventSubscribers

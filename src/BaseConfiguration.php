@@ -35,21 +35,10 @@
 namespace abexto\amylian\yii\doctrine\common;
 
 /**
- * Description of PackageBootstrap
+ * Description of BaseConfiguration
  *
  * @author Andreas Prucha, Abexto - Helicon Software Development
  */
-class PackageBootstrap implements \yii\base\BootstrapInterface
+class BaseConfiguration extends \abexto\amylian\yii\doctrine\base\BaseDoctrineComponent implements BaseConfigurationInterface
 {
-
-    /**
-     * @param \yii\base\Application $app
-     */
-    public function bootstrap($app)
-    {
-        if (!\Yii::$container->has(Consts::DEFAULT_EVENT_MANAGER_REF)) {
-            \Yii::$container->setSingleton(Consts::DEFAULT_EVENT_MANAGER_REF, ['class' => BaseEventManager::class]);
-        }
-    }
-
 }
