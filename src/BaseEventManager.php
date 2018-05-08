@@ -20,7 +20,7 @@ implements BaseEventManagerInterface
     const DEFAULT_REF = Consts::DEFAULT_EVENT_MANAGER_REF;
     const DEFAULT_CLASS = Consts::DEFAULT_EVENT_MANAGER_CLASS;
 
-    public $instClass = \Doctrine\Common\BaseEventManager::class;
+    public $instClass = \Doctrine\Common\EventManager::class;
 
     /**
      * Definition of EventSubscribers
@@ -55,11 +55,7 @@ implements BaseEventManagerInterface
     
     protected function ensureEventSubscriber($subscriberDefinition)
     {
-        if (is_array($subscriberDefinition) && isset($subscriberDefinition['class']) && !is_a($subscriberDefinition['class'], \yii\base\Configurable::class)) {
-            return new $subscriberDefinition['class']();
-        } else {
-            return \abexto\amylian\yii\doctrine\base\InstanceManager::ensure($subscriberDefinition);
-        }
+        return \abexto\amylian\yii\doctrine\base\InstanceManager::ensure($subscriberDefinition);
     }
 
     /**
