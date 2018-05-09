@@ -32,7 +32,7 @@
  * 
  */
 
-namespace abexto\amylian\yii\doctrine\common\tests\classes;
+namespace amylian\yii\doctrine\common\tests\classes;
 
 /**
  * Description of TestEventSubscriberComponent

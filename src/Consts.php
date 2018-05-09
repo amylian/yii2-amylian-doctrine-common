@@ -32,17 +32,17 @@
  * 
  */
 
-namespace abexto\amylian\yii\doctrine\common;
+namespace amylian\yii\doctrine\common;
 
 /**
  * Description of Consts
  *
  * @author Andreas Prucha, Abexto - Helicon Software Development
  */
-class Consts extends \abexto\amylian\yii\doctrine\base\Consts
+class Consts extends \amylian\yii\doctrine\base\Consts
 {
     const DEFAULT_EVENT_MANAGER_REF = BaseEventManagerInterface::class;
-    const DEFAULT_EVENT_MANAGER_CLASS = BaseEventManager::class;
+    const DEFAULT_EVENT_MANAGER_CLASS = EventManager::class;
     const DEFAULT_CONFIGURATION_REF  = BaseConfigurationInterface::class;
     const DEFAULT_CONFIGURATION_CLASS = BaseConfiguration::class;
 };

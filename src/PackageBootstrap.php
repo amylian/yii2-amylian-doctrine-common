@@ -32,7 +32,7 @@
  * 
  */
 
-namespace abexto\amylian\yii\doctrine\common;
+namespace amylian\yii\doctrine\common;
 
 /**
  * Description of PackageBootstrap
@@ -48,7 +48,7 @@ class PackageBootstrap implements \yii\base\BootstrapInterface
     public function bootstrap($app)
     {
         if (!\Yii::$container->has(Consts::DEFAULT_EVENT_MANAGER_REF)) {
-            \Yii::$container->setSingleton(Consts::DEFAULT_EVENT_MANAGER_REF, ['class' => BaseEventManager::class]);
+            \Yii::$container->setSingleton(Consts::DEFAULT_EVENT_MANAGER_REF, ['class' => EventManager::class]);
         }
     }
 

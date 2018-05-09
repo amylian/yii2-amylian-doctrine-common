@@ -32,13 +32,13 @@
  * 
  */
 
-namespace abexto\amylian\yii\doctrine\common;
+namespace amylian\yii\doctrine\common;
 
 /**
  * Description of BaseConfiguration
  *
  * @author Andreas Prucha, Abexto - Helicon Software Development
  */
-class BaseConfiguration extends \abexto\amylian\yii\doctrine\base\BaseDoctrineComponent implements BaseConfigurationInterface
+class BaseConfiguration extends \amylian\yii\doctrine\base\BaseDoctrineComponent implements BaseConfigurationInterface
 {
 }

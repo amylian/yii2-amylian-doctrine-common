@@ -32,7 +32,7 @@
  * 
  */
 
-namespace abexto\amylian\yii\doctrine\common;
+namespace amylian\yii\doctrine\common;
 
 /**
  * @author Andreas Prucha, Abexto - Helicon Software Development

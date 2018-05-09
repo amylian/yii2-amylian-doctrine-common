@@ -26,15 +26,15 @@
   },
   "autoload": {
     "psr-4": {
-      "abexto\\amylian\\yii\\doctrine\\common\\": "src/"
+      "amylian\\yii\\doctrine\\common\\": "src/"
     }  
   },
   "autoload-dev": {
     "psr-4": {
-      "abexto\\amylian\\yii\\doctrine\\common\\tests\\": "tests/"
+      "amylian\\yii\\doctrine\\common\\tests\\": "tests/"
     }  
   },
   "extra": {
-    "bootstrap": "abexto\\amylian\\yii\\doctrine\\common\\PackageBootstrap"
+    "bootstrap": "amylian\\yii\\doctrine\\common\\PackageBootstrap"
   }
 }
