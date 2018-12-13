@@ -43,7 +43,7 @@ class Consts extends \amylian\yii\doctrine\base\Consts
 {
     const DEFAULT_EVENT_MANAGER_REF = BaseEventManagerInterface::class;
     const DEFAULT_EVENT_MANAGER_CLASS = EventManager::class;
-    const DEFAULT_CONFIGURATION_REF  = BaseConfigurationInterface::class;
+    const DEFAULT_CONFIGURATION_REF  = ConfigurationInterface::class;
     const DEFAULT_CONFIGURATION_CLASS = BaseConfiguration::class;
 };
 

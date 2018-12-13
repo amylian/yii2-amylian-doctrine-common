@@ -39,6 +39,6 @@ namespace amylian\yii\doctrine\common;
  *
  * @author Andreas Prucha, Abexto - Helicon Software Development
  */
-class BaseConfiguration extends \amylian\yii\doctrine\base\BaseDoctrineComponent implements BaseConfigurationInterface
+class BaseConfiguration extends \amylian\yii\doctrine\base\BaseDoctrineComponent implements ConfigurationInterface
 {
 }

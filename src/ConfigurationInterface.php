@@ -37,6 +37,6 @@ namespace amylian\yii\doctrine\common;
 /**
  * @author Andreas Prucha, Abexto - Helicon Software Development
  */
-interface BaseConfigurationInterface
+interface ConfigurationInterface
 {
 }
