@@ -47,8 +47,8 @@ class PackageBootstrap implements \yii\base\BootstrapInterface
      */
     public function bootstrap($app)
     {
-        if (!\Yii::$container->has(Consts::DEFAULT_EVENT_MANAGER_REF)) {
-            \Yii::$container->setSingleton(Consts::DEFAULT_EVENT_MANAGER_REF, ['class' => EventManager::class]);
+        if (!\Yii::$container->has(Consts::DEFAULT_EVENT_MANAGER)) {
+            \Yii::$container->setSingleton(Consts::DEFAULT_EVENT_MANAGER, ['class' => Consts::DEFAULT_EVENT_MANAGER_CLASS]);
         }
     }
 

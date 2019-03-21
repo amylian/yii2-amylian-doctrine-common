@@ -9,11 +9,9 @@
 namespace amylian\yii\doctrine\common;
 
 /**
- * Description of EventManager
  *
  * @author andreas
  */
-class EventManager extends \Doctrine\Common\EventManager implements ConfigurableEventManagerInterface
+interface ConfigurableEventManagerInterface extends \yii\base\Configurable
 {
-    //put your code here
 }

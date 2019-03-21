@@ -41,10 +41,16 @@ namespace amylian\yii\doctrine\common;
  */
 class Consts extends \amylian\yii\doctrine\base\Consts
 {
-    const DEFAULT_EVENT_MANAGER_REF = BaseEventManagerInterface::class;
+    const DEFAULT_CACHE = \amylian\yii\doctrine\cache\ConfigurableCacheInterface::class;
+    const DEFAULT_CACHE_CLASS = \amylian\yii\doctrine\cache\YiiCache::class;
+    
+    const DEFAULT_EVENT_MANAGER = EventManager::Class;
     const DEFAULT_EVENT_MANAGER_CLASS = EventManager::class;
+
+    /**
     const DEFAULT_CONFIGURATION_REF  = ConfigurationInterface::class;
     const DEFAULT_CONFIGURATION_CLASS = BaseConfiguration::class;
+    */
 };
 
 
