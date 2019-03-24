@@ -18,6 +18,7 @@
 	],
 	"require" : {
 		"doctrine/common" : "*@stable",
+		"amylian/doctrine-common" : "*@stable",
 		"amylian/yii2-amylian-doctrine-base" : "dev-master"
 	},
 	"require-dev" : {
